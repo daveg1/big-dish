@@ -3,7 +3,7 @@
 </p>
 
 ## Site
-You can have a look at the live site <a href="rigbone1.github.com/big-dish">here</a>.
+You can have a look at the live site <a href="https://rigbone1.github.io/big-dish/">here</a>.
 You can also check out the coding behind the website in the <a href="https://github.com/rigbone1/big-dish/blob/master/docs">docs</a> folder.
 
 ## Members
