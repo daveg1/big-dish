@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+/* Generic */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+html {height: 100%;}
+
+body {
+    color: #333;
+    font: 14px/1 Arial, sans-serif;
+    margin: 0;
+    min-height: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a[href]:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    color: #000;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 72px 0 36px;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 48px 0 24px;
+}
+
+h3 {
+    font-size: 18px;
+    margin: 24px 0 18px;
+}
+
+p {
+    line-height: 1.42;
+    margin: 12px 0 6px;
+}
+
+/* Semantic */
+header {
+    color: #fff;
+}
+
+header.intro {
+    padding: 128px 0;
+    position: relative;
+}
+
+nav {
+    height: 60px;
+    left: 0;
+    padding: 0 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+nav.intro {
+    justify-content: flex-end;
+}
+
+menu, ul {
+    list-style: none;
+}
+
+menu {
+    display: flex;
+}
+
+menu a {
+    font-size: 12px;
+}
+
+main {
+    overflow: auto;
+}
+
+section {
+    padding: 24px 0;
+}
+
+section > a {
+    color: #3c4eff;
+}
+
+section p + a {
+    display: block;
+    margin-top: 24px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    font-size: 12px;
+    overflow: auto;
+}
+
+footer h3 {
+    color: inherit;
+}
+
+footer b {
+    font-size: 14px;
+}
+
+footer ul {
+    margin: 18px 0;
+    padding: 0;
+}
+
+footer li {
+    margin: 6px 0;
+}
+
+/* Structural */
+.container {
+    padding-left: 24px;
+    padding-right: 24px;
+    margin: 0 auto;
+    max-width: 1072px;
+    width: 100%;
+}
+
+.split {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: min-content;
+    grid-gap: 18px;
+    padding: 18px 0;
+}
+
+/* Intro Header Cover */
+header .cover {
+    background: #333 no-repeat center / cover;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+/* Navbar Styles */
+menu li:not(:last-child){
+    margin-right: 12px;
+}
+
+/* Quick Recipes Bar */
+.quick-recipes .recipe {
+    display: block;
+    text-align: center;
+}
+
+/* Footer */
