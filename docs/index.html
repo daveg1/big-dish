@@ -4,38 +4,39 @@
         <meta charset="utf-8">
         <title>Big Dish — Home</title>
         <link rel="stylesheet" href="./public/styles/main.css">
+        <link rel="shortcut icon" href="./public/assets/icon.ico">
     </head>
     <body>
         <header class="intro">
             <nav class="intro split container">
                 <menu>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Recipes</a></li>
-                    <li><a href="">Events</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a tabindex="-1" href class="active">Home</a></li>
+                    <li><a tabindex="-1" href="">About</a></li>
+                    <li><a tabindex="-1" href="./recipes/index.html">Recipes</a></li>
+                    <li><a tabindex="-1" href="">Events</a></li>
+                    <li><a tabindex="-1" href="">Contact</a></li>
                 </menu>
             </nav>
             <section class="container" style="text-align: center;">
-                <img src="./public/assets/logo.png" alt="Big Dish logo" height="88px">
+                <img src="./public/assets/logo-full.png" alt="Big Dish logo" height="88px">
             </section>
             <div class="cover"></div>
         </header>
         <main class="container">
             <section>
-                <h2>What Is Big Dish?</h2>
+                <h2 id="intro">What Is Big Dish?</h2>
                 <p>Big Dish is a brand-new cooking society based right here at RGU. We often hold events, gatherings, workships and the like with our members, although newcomers are always welcome! Interested and want to know more? We implore you to read our about page and if you so feel inclined, join us at our next meeting—you may be our newest member!</p>
                 <a href="./about/index.html">Learn More</a>
             </section>
             <section>
-                <h2>Recent Events</h2>
+                <h2 id="recent-events">Recent Events</h2>
                 <h3>Master Chef</h3>
                 <p>The annual Big Dish Master Chef showdown has concluded! It was exceedingly difficult deciding the winner, but the results are in. We would like to congratulate Reginald for coming out on top and becoming the Master Chef and winning the grande prize of £500!</p>
                 <a href="./events/master-chef">Read More</a>
             </section>
             <section>
-                <h2>Some Quick Recipes</h2>
-                <div class="grid quick-recipes">
+                <h2 id="quick-recipes">Some Quick Recipes</h2>
+                <div class="grid grid-quick-recipes">
                     <div class="item">
                         <a href="./recipes/" class="recipe">
                             <img src="http://placehold.it/196x196" alt="Recipe 1">
@@ -74,16 +75,26 @@
                         <b>Contact</b>
                         <ul>
                             <li>+44 078 69482</li>
-                            <li>Some Addr. 42</li>
-                            <li>AB60 PN1</li>
+                            <li>Robert Gordon University,</li>
+                            <li>Garthdee Rd</li>
+                            <li>AB10 7GJ</li>
                         </ul>
                     </div>
                     <div class="item">
                         <b>Social</b>
                         <ul>
-                            <li><a href="#facebook">Facebook</a></li>
-                            <li><a href="#twitter">Twitter</a></li>
-                            <li><a href="#instagram">Instagram</a></li>
+                            <li class="vertical-center">
+                                <i class="icon facebook"></i>
+                                <a href="#facebook">Facebook</a>
+                            </li>
+                            <li class="vertical-center">
+                                <i class="icon twitter"></i>
+                                <a href="#twitter">Twitter</a>
+                            </li>
+                            <li class="vertical-center">
+                                <i class="icon instagram"></i>
+                                <a href="#instagram">Instagram</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
