@@ -123,6 +123,7 @@ form.bar {
 }
 
 select {
+    cursor: pointer;
     margin-left: 6px;
 }
 
