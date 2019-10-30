@@ -11,5 +11,5 @@ The masterminds behind Big Dish are:
 - <a href="https://github.com/rnhliziyo">Reg Nhliziyo</a>
 - <a href="https://github.com/caius-o">Caius Omary</a>
 - <a href="https://github.com/Harman367">Harmanpreet Singh</a>
-- <a>Osman Ali</a>
+- <a href="https://github.com/LabyrinthV">Osman Ali</a>
 - <a href="https://github.com/rigbone1">David Graham</a>
