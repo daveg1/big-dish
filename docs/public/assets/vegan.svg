@@ -1,5 +1,1 @@
-<svg height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision;text-rendering:geometricPrecision;image-rendering:optimizeQuality;" viewBox="0 0 291 255" x="0px" y="0px" fill-rule="evenodd" clip-rule="evenodd">
-    <g>
-        <path d="M291 27c-6,127 -71,190 -196,189 -5,12 -7,25 -5,39 -7,-1 -10,-2 -10,-2 -6,-59 53,-94 101,-115 -55,19 -89,44 -103,74 -1,-156 144,-98 213,-185zm-291 -27c66,21 102,58 109,110 -14,12 -26,27 -32,49 -7,-14 -13,-33 -16,-55 2,25 7,46 14,62 -2,7 -3,13 -3,21 -83,-37 -25,-124 -72,-187z" fill="#269909"></path>
-    </g>
-</svg>
+<svg height="24px" width="24px" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 291 255"><path d="M291 27c-6,127 -71,190 -196,189 -5,12 -7,25 -5,39 -7,-1 -10,-2 -10,-2 -6,-59 53,-94 101,-115 -55,19 -89,44 -103,74 -1,-156 144,-98 213,-185zm-291 -27c66,21 102,58 109,110 -14,12 -26,27 -32,49 -7,-14 -13,-33 -16,-55 2,25 7,46 14,62 -2,7 -3,13 -3,21 -83,-37 -25,-124 -72,-187z" fill="#269909"/></svg>
