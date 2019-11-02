@@ -13,11 +13,11 @@
                     <img src="../public/assets/logo.png" alt="Big Dish" height="36px">
                 </a>
                 <menu>
-                    <li><a tabindex="-1" href="../">Home</a></li>
-                    <li><a tabindex="-1" href="">About</a></li>
-                    <li><a tabindex="-1" href class="active">Recipes</a></li>
-                    <li><a tabindex="-1" href="">Events</a></li>
-                    <li><a tabindex="-1" href="">Contact</a></li>
+                    <li><a class="link" href="../" tabindex="-1">Home</a></li>
+                    <li><a class="link" href="" tabindex="-1">About</a></li>
+                    <li><a class="link active" href tabindex="-1">Recipes</a></li>
+                    <li><a class="link" href="" tabindex="-1">Events</a></li>
+                    <li><a class="link" href="" tabindex="-1">Contact</a></li>
                 </menu>
             </div>
         </nav>
@@ -25,15 +25,15 @@
             <h2>Check out Our Recipes</h2>
             <form class="bar split" id="filters">
                 <div class="vertical-center">
-                    <label>Show</label>
+                    <label>Show Only</label>
                     <div class="vertical-center" id="show">
                         <label class="label-button" for="vegan">
                             <input type="checkbox" name="" id="vegan">
                             <span>Vegan</span>
                         </label>
-                        <label class="label-button" for="other">
-                            <input type="checkbox" name="" id="other">
-                            <span>Other Option</span>
+                        <label class="label-button" for="nonVegan">
+                            <input type="checkbox" name="" id="nonVegan">
+                            <span>Non Vegan</span>
                         </label>
                     </div>
                 </div>
@@ -44,15 +44,15 @@
                     </select>
                 </div>
             </form>
-            <section class="grid grid-recipes">
+            <section class="grid">
                 <div class="item">
-                    <a href="" class="recipe">
-                        <img src="https://placehold.it/190x190" alt="Recipe 1">
+                    <a href="" class="recipe" data-meal="vegan">
+                        <img src="https://placehold.it/216x216" alt="Recipe 1">
                         <h4>Recipe Name</h4>
                         <p>This is a short recipe description.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon pot"></i>Cooking Time</span>
+                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
                                 <span>2 hours</span>
                             </p>
                             <p><i class="icon vegan"></i>Vegan Friendly</p>
@@ -60,39 +60,39 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="recipe">
-                        <img src="https://placehold.it/190x190" alt="Recipe 2">
+                    <a href="" class="recipe" data-meal="nonVegan">
+                        <img src="https://placehold.it/216x216" alt="Recipe 2">
                         <h4>Recipe Name</h4>
                         <p>This is a short recipe description.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon pot"></i>Cooking Time</span>
+                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
                                 <span>30 mins</span>
                             </p>
                         </div>
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="recipe">
-                        <img src="https://placehold.it/190x190" alt="Recipe 3">
+                    <a href="" class="recipe" data-meal="nonVegan">
+                        <img src="https://placehold.it/216x216" alt="Recipe 3">
                         <h4>Recipe Name</h4>
                         <p>This is a short recipe description.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon pot"></i>Cooking Time</span>
+                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
                                 <span>1 hour 30 mins</span>
                             </p>
                         </div>
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="recipe">
-                        <img src="https://placehold.it/190x190" alt="Recipe 4">
+                    <a href="" class="recipe" data-meal="vegan">
+                        <img src="https://placehold.it/216x216" alt="Recipe 4">
                         <h4>Recipe Name</h4>
                         <p>This is a short recipe description.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon pot"></i>Cooking Time</span>
+                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
                                 <span>1 hour</span>
                             </p>
                             <p><i class="icon vegan"></i>Vegan Friendly</p>
@@ -100,13 +100,13 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="recipe">
-                        <img src="https://placehold.it/190x190" alt="Recipe 5">
+                    <a href="" class="recipe" data-meal="vegan">
+                        <img src="https://placehold.it/216x216" alt="Recipe 5">
                         <h4>Recipe Name</h4>
                         <p>This is a short recipe description.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon pot"></i>Cooking Time</span>
+                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
                                 <span>45 mins</span>
                             </p>
                             <p><i class="icon vegan"></i>Vegan Friendly</p>
@@ -114,26 +114,26 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="recipe">
-                        <img src="https://placehold.it/190x190" alt="Recipe 6">
+                    <a href="" class="recipe" data-meal="nonVegan">
+                        <img src="https://placehold.it/216x216" alt="Recipe 6">
                         <h4>Recipe Name</h4>
                         <p>This is a short recipe description.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon pot"></i>Cooking Time</span>
+                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
                                 <span>15 mins</span>
                             </p>
                         </div>
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="recipe">
-                        <img src="https://placehold.it/190x190" alt="Recipe 7">
+                    <a href="" class="recipe" data-meal="vegan">
+                        <img src="https://placehold.it/216x216" alt="Recipe 7">
                         <h4>Recipe Name</h4>
                         <p>This is a short recipe description.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon pot"></i>Cooking Time</span>
+                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
                                 <span>2 hours 15 mins</span>
                             </p>
                             <p><i class="icon vegan"></i>Vegan Friendly</p>
@@ -141,26 +141,26 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="recipe">
-                        <img src="https://placehold.it/190x190" alt="Recipe 8">
+                    <a href="" class="recipe" data-meal="nonVegan">
+                        <img src="https://placehold.it/216x216" alt="Recipe 8">
                         <h4>Recipe Name</h4>
                         <p>This is a short recipe description.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon pot"></i>Cooking Time</span>
+                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
                                 <span>15 mins</span>
                             </p>
                         </div>
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="recipe">
-                        <img src="https://placehold.it/190x190" alt="Recipe 9">
+                    <a href="" class="recipe" data-meal="vegan">
+                        <img src="https://placehold.it/216x216" alt="Recipe 9">
                         <h4>Recipe Name</h4>
                         <p>This is a short recipe description.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon pot"></i>Cooking Time</span>
+                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
                                 <span>25 mins</span>
                             </p>
                             <p><i class="icon vegan"></i>Vegan Friendly</p>
@@ -168,13 +168,13 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="recipe">
-                        <img src="https://placehold.it/190x190" alt="Recipe 10">
+                    <a href="" class="recipe" data-meal="nonVegan">
+                        <img src="https://placehold.it/216x216" alt="Recipe 10">
                         <h4>Recipe Name</h4>
                         <p>This is a short recipe description.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon pot"></i>Cooking Time</span>
+                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
                                 <span>1 hour 25 mins</span>
                             </p>
                         </div>
@@ -186,7 +186,7 @@
             <section class="container">
                 <header class="split">
                     <h3>Big Dish</h3>
-                    <a href="#top">Back to Top</a>
+                    <a class="link" href="#top">Back to Top</a>
                 </header>
                 <div class="grid">
                     <div class="item">
@@ -203,20 +203,21 @@
                         <ul>
                             <li class="vertical-center">
                                 <i class="icon facebook"></i>
-                                <a href="#facebook">Facebook</a>
+                                <a class="link" href="#facebook">Facebook</a>
                             </li>
                             <li class="vertical-center">
                                 <i class="icon twitter"></i>
-                                <a href="#twitter">Twitter</a>
+                                <a class="link" href="#twitter">Twitter</a>
                             </li>
                             <li class="vertical-center">
                                 <i class="icon instagram"></i>
-                                <a href="#instagram">Instagram</a>
+                                <a class="link" href="#instagram">Instagram</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </section>
         </footer>
+        <script src="../public/scripts/filter.js"></script>
     </body>
 </html>
