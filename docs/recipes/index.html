@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
         <title>Big Dish — Recipes</title>
         <link rel="stylesheet" href="../public/styles/main.css">
         <link rel="shortcut icon" href="../public/assets/icon.ico">
@@ -14,7 +15,26 @@
                 </a>
                 <menu>
                     <li><a class="link" href="../" tabindex="-1">Home</a></li>
-                    <li><a class="link" href="" tabindex="-1">About</a></li>
+                    <li class="has-dropdown">
+                        <a class="link" tabindex="-1">Site</a>
+                        <div class="dropdown">
+                            <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+                                <div class="item">
+                                    <h4>About</h4>
+                                    <a class="link" href="">Learn More</a>
+                                </div>
+                                <div class="item">
+                                    <h4>Members</h4>
+                                    <a class="link" href="">Meet Us</a>
+                                </div>
+                                <div class="item">
+                                    <h4>Shop</h4>
+                                    <a class="link" href="">Merchandise</a>
+                                    <a class="link" href="">Utensils</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li><a class="link active" href tabindex="-1">Recipes</a></li>
                     <li><a class="link" href="" tabindex="-1">Events</a></li>
                     <li><a class="link" href="" tabindex="-1">Contact</a></li>
@@ -22,7 +42,7 @@
             </div>
         </nav>
         <main class="container">
-            <h2>Check out Our Recipes</h2>
+            <h2 id="our-recipes">Check out Our Recipes</h2>
             <form class="bar split" id="filters">
                 <div class="vertical-center">
                     <label>Show Only</label>

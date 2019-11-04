@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
         <title>Big Dish — Home</title>
         <link rel="stylesheet" href="./public/styles/main.css">
         <link rel="shortcut icon" href="./public/assets/icon.ico">
@@ -11,7 +12,26 @@
             <nav class="intro split container">
                 <menu>
                     <li><a class="link active" href tabindex="-1">Home</a></li>
-                    <li><a class="link" href="" tabindex="-1">About</a></li>
+                    <li class="has-dropdown">
+                        <a class="link" tabindex="-1">Site</a>
+                        <div class="dropdown">
+                            <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+                                <div class="item">
+                                    <h4>About</h4>
+                                    <a class="link" href="">Learn More</a>
+                                </div>
+                                <div class="item">
+                                    <h4>Members</h4>
+                                    <a class="link" href="">Meet Us</a>
+                                </div>
+                                <div class="item">
+                                    <h4>Shop</h4>
+                                    <a class="link" href="">Merchandise</a>
+                                    <a class="link" href="">Utensils</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li><a class="link" href="./recipes/index.html" tabindex="-1">Recipes</a></li>
                     <li><a class="link" href="" tabindex="-1">Events</a></li>
                     <li><a class="link" href="" tabindex="-1">Contact</a></li>
@@ -21,7 +41,7 @@
                 <img src="./public/assets/logo-full.png" alt="Big Dish logo" height="88px">
             </section>
             <div class="cover" style="background-image: radial-gradient(transparent, rgba(0,0,0,.5)), url('./public/assets/landing.jpg');"></div>
-            <a href="https://www.pexels.com/@marketingtuig" class="author">Photo by Timur Saglambilek</a>
+            <a href="https://www.pexels.com/@marketingtuig" target="_blank" class="author">Photo by Timur Saglambilek</a>
         </header>
         <main class="container">
             <section>
