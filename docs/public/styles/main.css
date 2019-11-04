@@ -198,6 +198,7 @@ footer li {
     content: '';
     display: none;
     position: absolute;
+    transform: translateX(50%);
 }
 
 .has-dropdown:before {
