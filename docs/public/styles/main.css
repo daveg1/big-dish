@@ -355,8 +355,45 @@ menu li:not(:last-child){
     height: 24px;
 }
 
+.recipe .icon {
+    transition: transform .15s ease-in;
+}
+
+.recipe .icon:hover {
+    transform: scale(1.2);
+}
+
+/* Footer Styles */
 footer .grid .item {
     display: block;
+}
+
+.social-links a {
+    align-items: center;
+    display: flex;
+}
+
+.social-links a:hover {
+    color: #fff;
+}
+
+/*
+Filter trick to change colour of background images. Source: https://codepen.io/sosuke/pen/Pjoqqp
+*/
+.social-links .facebook:hover {
+    filter: invert(44%) sepia(14%) saturate(2363%) hue-rotate(176deg) brightness(90%) contrast(85%);
+}
+
+.social-links .twitter:hover {
+    filter: invert(44%) sepia(87%) saturate(1141%) hue-rotate(177deg) brightness(101%) contrast(90%);
+}
+
+.social-links .instagram:hover {
+    filter: invert(47%) sepia(29%) saturate(957%) hue-rotate(299deg) brightness(90%) contrast(97%);
+}
+
+.social-links .icon {
+    pointer-events: none;
 }
 
 /* Special Form Items */
@@ -397,12 +434,29 @@ footer .grid .item {
     width: 24px;
 }
 
+/*
+
+Icons Notice:
+All icons used were downloaded for free from the following sites:
+
+The Noun Project (https://thenounproject.com/):
+- leaf by yanti
+- clock by Oksana Latysheva
+- help by Rainbow Designs
+
+SimpleIcons (https://simpleicons.org/):
+- facebook
+- twitter
+- instagram
+
+*/
+
+.icon.vegan {background-image: url('../assets/leaf.svg');}
+.icon.time {background-image: url('../assets/clock.svg');}
 .icon.help {background-image: url('../assets/help.svg')}
-.icon.time {background-image: url('../assets/time.svg');}
-.icon.vegan {background-image: url('../assets/vegan.svg');}
-.icon.facebook {background-image: url('../assets/facebook.png');}
-.icon.twitter {background-image: url('../assets/twitter.png');}
-.icon.instagram {background-image: url('../assets/instagram.png');}
+.icon.facebook {background-image: url('../assets/facebook.svg');}
+.icon.twitter {background-image: url('../assets/twitter.svg');}
+.icon.instagram {background-image: url('../assets/instagram.svg');}
 
 footer .icon {
     margin-right: 6px;
