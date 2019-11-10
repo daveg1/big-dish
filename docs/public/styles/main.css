@@ -5,15 +5,7 @@
     box-sizing: border-box;
 }
 
-*::selection {
-    background-color: rgba(243,164,71,.3);
-    color: #333;
-}
-
-nav *::selection,
-footer *::selection {
-    color: #fff;
-}
+*::selection { background-color: rgba(243,164,71,.3); }
 
 html {
     height: 100%;
@@ -32,6 +24,10 @@ a {
     text-decoration: none;
 }
 
+.link {
+    color: #3c4eff;
+}
+
 .link:hover,
 .link:focus {
     color: #f3a447;
@@ -39,139 +35,55 @@ a {
     text-decoration: underline;
 }
 
-a.active {
-    color: #f3a447;
-}
-
-a.active:hover {
-    text-decoration: none;
-}
+a.active { color: #f3a447; }
+a.active:hover { text-decoration: none; }
 
 h1, h2, h3, h4 {
-    color: #000;
     font-weight: 700;
     font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.2;
     margin: 0;
 }
 
 h1 {
-    font-size: 36px;
-    margin: 72px 0 36px;
+    font-size: 2em;
+    margin-top: 2em;
 }
 
 h2 {
-    font-size: 28px;
-    margin: 48px 0 28px;
+    font-size: 1.5em;
+    margin-top: 1.5em;
 }
 
 h3 {
-    font-size: 18px;
-    margin: 24px 0 18px;
+    font-size: 1.1em;
+    margin-top: 1.1em;
 }
 
 h4 {
     font-size: 16px;
-    margin: 6px 0;
+    margin: .5em 0;
 }
 
 p {
-    line-height: 1.42;
-    margin: 12px 0 6px;
+    line-height: 1.6;
+    margin: 1.5em 0 .75em;
 }
 
-/* Semantic */
-header.intro {
-    box-shadow: 2px 0 12px #333;
-    padding: 128px 0;
-    position: relative;
-}
-
-nav {
-    background-color: #333;
-    color: #fff;
-    height: 60px;
-    padding: 0 24px;
-}
-
-nav.intro {
-    background-color: transparent;
-    justify-content: flex-end;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-menu, ul {
+ul:not(.bullet) {
     list-style: none;
     padding: 0;
 }
 
-menu {
-    display: flex;
-    position: relative;
+ul.bullet {
+    list-style: square;
+    margin: 1.1em 0;
+    padding-left: 24px;
 }
 
-menu a {
-    font-size: 12px;
-    padding: 6px 0;
-}
+.bullet li { line-height: 1.6; }
 
-main {
-    overflow: auto;
-}
-
-section {
-    padding: 24px 0;
-}
-
-section > a {
-    color: #3c4eff;
-}
-
-section p + a {
-    display: block;
-    margin-top: 24px;
-}
-
-form.bar {
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 6px;
-}
-
-select {
-    cursor: pointer;
-    margin-left: 6px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    font-size: 12px;
-    overflow: auto;
-}
-
-footer section {
-    padding: 0;
-}
-
-footer h3 {
-    color: inherit;
-}
-
-footer b {
-    font-size: 14px;
-}
-
-footer ul {
-    margin: 18px 0;
-}
-
-footer li {
-    line-height: 24px;
-}
-
-/* Structural */
+/* Structural Classes */
 .container {
     padding-left: 24px;
     padding-right: 24px;
@@ -186,91 +98,32 @@ footer li {
     justify-content: space-between;
 }
 
+.split.even > * { flex-basis: 50%; }
+
+.space-evenly {
+    display: flex;
+    justify-content: space-around;
+}
+
 .vertical-center {
     align-items: center;
     display: flex;
 }
 
-/* Navbar Dropdown Menu */
-.has-dropdown:before,
-.has-dropdown:after {
-    border: 10px solid transparent;
-    content: '';
-    display: none;
-    position: absolute;
-    transform: translateX(50%);
+/* Textual Classes */
+.text-center {
+    text-align: center;
 }
 
-.has-dropdown:before {
-    border-bottom-color: #ccc;
-    bottom: -26px;
+/* Header Styles */
+header.intro {
+    box-shadow: 2px 0 12px #333;
+    padding: 128px 0;
+    position: relative;
 }
 
-.has-dropdown:after {
-    border-bottom-color: #efefef;
-    bottom: -27.5px;
-}
-
-.has-dropdown > a {
-    cursor: pointer;
-}
-
-.dropdown {
-    background-color: #efefef;
-    border: 1px solid #ccc;
-    color: #333;
-    display: none;
-    left: 0;
-    padding: 6px 12px;
-    position: absolute;
-    top: 40px;
-    width: 320px;
-}
-
-.has-dropdown:hover .dropdown {
-    display: block;
-}
-
-.has-dropdown:hover:before,
-.has-dropdown:hover:after {
-    display: block;
-}
-
-.dropdown .grid {
-    padding: 6px 0;
-}
-
-.dropdown .grid .item {
-    flex-direction: column;
-    justify-content: unset;
-}
-
-/* Grid Structures */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: min-content;
-    grid-gap: 36px 18px;
-    padding: 18px 0;
-}
-
-.grid .item {
-    display: flex;
-    justify-content: center;
-}
-
-.grid .item img {
-    border-radius: 3px;
-}
-
-.item.hidden {
-    display: none;
-    position: absolute;
-    visibility: hidden;
-}
-
-/* Intro Header Cover */
-header .cover {
+/* Landing Page Header Styles */
+.intro .cover {
     background: #333 no-repeat top center / cover;
     bottom: 0;
     /* filter: sepia(25%); */
@@ -298,7 +151,7 @@ header .cover {
     background-image: url('../assets/landing.jpg');
 }
 
-header .author {
+.intro .author {
     bottom: 6px;
     color: #fff;
     cursor: pointer;
@@ -310,15 +163,43 @@ header .author {
     transition: opacity .15s ease-in;
 }
 
-header .author:hover {
+.intro .author:hover {
     opacity: 1;
 }
 
 /* Navbar Styles */
+nav {
+    background-color: #333;
+    color: #fff;
+    height: 60px;
+    padding: 0 24px;
+}
+
+menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    position: relative;
+}
+
 menu li:not(:last-child){
     margin-right: 12px;
 }
 
+menu li > .link {
+    color: #fff;
+}
+
+menu .link.active {
+    color: #f3a447;
+}
+
+menu a {
+    font-size: 12px;
+    padding: 6px 0;
+}
+
+/* Site Navbar Logo */
 .logo img {
     display: block;
 }
@@ -327,43 +208,134 @@ menu li:not(:last-child){
     padding: 24px 96px;
 }
 
-/* Various Grid Tweaks */
-.grid-quick-recipes .recipe {
-    text-align: center;
+/* Dropdown Menu */
+.has-dropdown > a {
+    cursor: pointer;
 }
 
-.recipe {
+.has-dropdown:hover .dropdown,
+.has-dropdown:hover .dropdown-arrow {
+    visibility: visible;
+}
+
+.dropdown-arrow {
+    bottom: -19px;
+    height: 18px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    visibility: hidden;
+    width: 320px;
+    z-index: 10000;
+}
+
+.dropdown-arrow:before {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    content: '';
+    height: 10px;
+    position: absolute;
+    bottom: -5px;
+    left: 18.5%;
+    transform: rotate(45deg);
+    width: 10px;
+}
+
+.dropdown {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 0 0 1px #fff;
+    color: #333;
+    left: 0;
+    padding: 6px 12px;
+    position: absolute;
+    top: 32px;
+    visibility: hidden;
+    width: 320px;
+}
+
+.dropdown .grid {
+    padding: 0;
+}
+
+.dropdown .grid .item {
+    flex-direction: column;
+    justify-content: unset;
+}
+
+/* Special Case for Landing Page */
+nav.intro {
+    background-color: transparent;
+    justify-content: flex-end;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* Main Styles */
+main {
+    overflow: auto;
+}
+
+main h1,
+main h2,
+main h3,
+main h4 {
+    color: #000;
+}
+
+/* Section Styles */
+section {
+    padding: 12px 0 24px;
+}
+
+section:first-child {
+    padding-top: 24px;
+}
+
+section p + a,
+article p + a {
     display: block;
-    transition: transform 150ms ease-in-out;
-}
-
-.recipe:hover,
-.recipe:focus {
-    outline: 1px dashed #f3a447;
-    outline-offset: 6px;
-    transform: translateY(-4px);
-}
-
-.recipe p {
-    font-size: 12px;
-}
-
-.recipe .info p {
-    align-items: center;
-    display: flex;
-    margin: 0;
-    height: 24px;
-}
-
-.recipe .icon {
-    transition: transform .15s ease-in;
-}
-
-.recipe .icon:hover {
-    transform: scale(1.2);
+    margin-top: 24px;
 }
 
 /* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    font-size: 12px;
+    overflow: auto;
+}
+
+footer section {
+    padding: 0;
+}
+
+footer h2 {
+    margin: .75em 0;
+}
+
+footer b {
+    font-size: 14px;
+}
+
+footer ul {
+    margin: 18px 0;
+}
+
+footer li {
+    line-height: 24px;
+}
+
+footer .link {
+    color: #fff;
+}
+
+footer .icon {
+    margin-right: 6px;
+}
+
 footer .grid .item {
     display: block;
 }
@@ -380,26 +352,28 @@ footer .grid .item {
 /*
 Filter trick to change colour of background images. Source: https://codepen.io/sosuke/pen/Pjoqqp
 */
-.social-links .facebook:hover {
-    filter: invert(44%) sepia(14%) saturate(2363%) hue-rotate(176deg) brightness(90%) contrast(85%);
+.social-links .facebook:hover  { filter: invert(44%) sepia(14%) saturate(2363%) hue-rotate(176deg) brightness(90%) contrast(85%);  }
+.social-links .twitter:hover   { filter: invert(44%) sepia(87%) saturate(1141%) hue-rotate(177deg) brightness(101%) contrast(90%); }
+.social-links .instagram:hover { filter: invert(47%) sepia(29%) saturate(957%) hue-rotate(299deg) brightness(90%) contrast(97%);   }
+
+.social-links .icon { pointer-events: none; }
+
+/* Form Styles */
+form.bar {
+    border-bottom: 1px solid #ccc;
+    margin-top: 1.5em;
+    padding-bottom: 6px;
 }
 
-.social-links .twitter:hover {
-    filter: invert(44%) sepia(87%) saturate(1141%) hue-rotate(177deg) brightness(101%) contrast(90%);
+select {
+    cursor: pointer;
+    margin-left: 6px;
 }
 
-.social-links .instagram:hover {
-    filter: invert(47%) sepia(29%) saturate(957%) hue-rotate(299deg) brightness(90%) contrast(97%);
-}
-
-.social-links .icon {
-    pointer-events: none;
-}
-
-/* Special Form Items */
+/* Checkboxe Styles */
 .label-button {
     align-items: center;
-    background-color: #efefef;
+    background-color: #f0f0f0;
     border-radius: 2px;
     cursor: pointer;
     display: flex;
@@ -408,13 +382,31 @@ Filter trick to change colour of background images. Source: https://codepen.io/s
     user-select: none;
 }
 
-.label-button input {
+.label-button input[type="checkbox"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fefefe;
+    border: 1px solid #7a7a7a;
+    border-radius: 1px;
+    height: 12px;
+    line-height: 7.5px;
+    outline: 0;
     pointer-events: none;
+    text-align: center;
+    width: 12px;
 }
 
-.label-button:not(:last-child){
-    margin-right: 6px;
+.label-button input[type="checkbox"]:before {
+    color: #fff;
+    content: '✔';
+    font-size: 9px;
+    font-weight: bold;
+    user-select: none;
 }
+
+.label-button input[type="checkbox"]:checked:before { color: #f3a447; }
+.label-button:not(:last-child){ margin-right: 6px; }
 
 .label-button:hover,
 .label-button.active {
@@ -422,8 +414,129 @@ Filter trick to change colour of background images. Source: https://codepen.io/s
     color: #fff;
 }
 
-#show {
-    margin-left: 6px;
+#show { margin-left: 6px; }
+
+/* Grid Structure */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: min-content;
+    grid-gap: 36px 18px;
+    padding: 1.5em 0;
+}
+
+.grid .item {
+    display: flex;
+    justify-content: center;
+}
+
+.item.hidden {
+    display: none;
+    position: absolute;
+    visibility: hidden;
+}
+
+.recipe {
+    display: block;
+    transition: transform 150ms ease-in-out;
+}
+
+.recipe:hover,
+.recipe:focus {
+    outline: 1px dashed #f3a447;
+    outline-offset: 6px;
+    transform: translateY(-4px);
+}
+
+.recipe img { border-radius: 3px; }
+
+.recipe p {
+    font-size: 12px;
+    margin: .75em 0;
+}
+
+.recipe .info p {
+    align-items: center;
+    display: flex;
+    margin: 0;
+    height: 24px;
+}
+
+.recipe .icon { transition: transform .15s ease-in; }
+.recipe .icon:hover { transform: scale(1.2); }
+
+/* Events Section */
+.events {
+    margin: 48px 0;
+}
+
+/* Events Slider Styles */
+.slider-bar {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: inset 0 0 0 1px #fff;
+    margin: 36px 0;
+}
+
+.slider-item {
+    cursor: pointer;
+    filter: grayscale(90%);
+    flex-basis: calc(100%/6);
+    padding: 16px;
+    position: relative;
+    transition: filter .15s ease-in;
+}
+
+.slider-item:before {
+    background-color: #000;
+    border-radius: 3px;
+    color: #fff;
+    content: attr(data-event);
+    font-size: 12px;
+    left: 50%;
+    min-width: 96px;
+    opacity: 0;
+    padding: 3px 6px;
+    position: absolute;
+    pointer-events: none;
+    top: -8px;
+    text-align: center;
+    transform: translateX(-50%);
+    transition: opacity .25s ease-in;
+}
+
+.slider-item:hover:before,
+.slider-item.selected:before {
+    opacity: 1;
+}
+
+.slider-item:hover,
+.slider-item.selected {
+    filter: unset;
+}
+
+.slider-item img {
+    display: block;
+    height: 64px;
+    margin: 0 auto;
+    pointer-events: none;
+    user-select: none;
+    width: 64px;
+}
+
+/* Current Event Being Shown */
+.current-event {
+    padding-right: 24px;
+}
+
+.current-event h2 {
+    margin: 0 0 0 8px;
+}
+
+/* Legal Page */
+.legal {
+    font-size: 12px;
 }
 
 /* Icons */
@@ -434,33 +547,12 @@ Filter trick to change colour of background images. Source: https://codepen.io/s
     width: 24px;
 }
 
-/*
-
-Icons Notice:
-All icons used were downloaded for free from the following sites:
-
-The Noun Project (https://thenounproject.com/):
-- leaf by yanti
-- clock by Oksana Latysheva
-- help by Rainbow Designs
-
-SimpleIcons (https://simpleicons.org/):
-- facebook
-- twitter
-- instagram
-
-*/
-
 .icon.vegan {background-image: url('../assets/leaf.svg');}
 .icon.time {background-image: url('../assets/clock.svg');}
 .icon.help {background-image: url('../assets/help.svg')}
 .icon.facebook {background-image: url('../assets/facebook.svg');}
 .icon.twitter {background-image: url('../assets/twitter.svg');}
 .icon.instagram {background-image: url('../assets/instagram.svg');}
-
-footer .icon {
-    margin-right: 6px;
-}
 
 /* Responsive Styling */
 @media only screen and (max-width: 1072px){
