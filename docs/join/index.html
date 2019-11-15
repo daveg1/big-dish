@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Big Dish — Membership</title>
+        <link rel="stylesheet" href="../public/styles/main.css">
+        <link rel="shortcut icon" href="../public/assets/icon.ico">
+        <meta name="description" content="Join Big Dish!">
+    </head>
+    <body>
+        <header class="intro">
+            <nav class="intro vertical-center">
+                <div class="split container">
+                    <a href="../" class="logo">
+                        <img src="../public/assets/logo.png" alt="Big Dish" height="36px">
+                    </a>
+                    <menu>
+                        <li><a class="link" href="../" tabindex="-1">Home</a></li>
+                        <li class="has-dropdown">
+                            <a class="link active" tabindex="-1">Society</a>
+                            <div class="dropdown-arrow"></div>
+                            <div class="dropdown">
+                                <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
+                                    <div class="item">
+                                        <h4>About</h4>
+                                        <a class="link" href="">Learn More</a>
+                                    </div>
+                                    <div class="item">
+                                        <h4>Members</h4>
+                                        <a class="link" href="">Meet Us</a>
+                                        <a class="link active" href="">Join Us</a>
+                                    </div>
+                                    <div class="item">
+                                        <h4>Shop</h4>
+                                        <a class="link" href="">Merchandise</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a class="link" href="../recipes/" tabindex="-1">Recipes</a></li>
+                        <li><a class="link" href="" tabindex="-1">Events</a></li>
+                        <li><a class="link" href="../contact/" tabindex="-1">Contact</a></li>
+                    </menu>
+                </div>
+            </nav>
+            <section class="container">
+                <h1>Join Us!</h1>
+            </section>
+            <div class="cover join" style="background-position: center 25%"></div>
+        </header>
+        <main class="container">
+            <section>
+                <p>Welcome to the membership page! We are very glad that you want to join our society. Please fill in the form below and we will provide you with information in regards to your membership and status within our society!</p>
+                <form>
+                    <h3>Your Details</h3>
+                    <div class="form-group">
+                        <input id="name" name="name" type="text" placeholder="Full Name">
+                        <label for="name">
+                            <i class="icon person"></i>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <input class="mail" id="email" name="email" type="text" placeholder="Email">
+                        <label for="email">
+                            <i class="icon mail"></i>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <input class="phone" id="phone" name="phone" type="text" placeholder="Phone Number">
+                        <label for="phone">
+                            <i class="icon phone"></i>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <input class="matric" id="matriculation" name="matriculation" type="text" placeholder="Matriculation Number">
+                        <label for="matriculation">
+                            <i class="icon badge"></i>
+                        </label>
+                    </div>
+                    <h3>Experience Level</h3>
+                    <div class="form-group">
+                        <select id="role" name="role">
+                            <option value="" selected>--- Select Role</option>
+                            <option value="Junior Chef">Junior Chef</option>
+                            <option value="Chef">Chef</option>
+                            <option value="Head Chef">Head Chef</option>
+                        </select>
+                        <label for="role">
+                            <i class="icon arrow"></i>
+                        </label>
+                    </div>
+                    <div class="button-holder">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+                <div id="form-output" class="form-output" title="Click to close."></div>
+            </section>
+        </main>
+        <footer>
+            <section class="container">
+                <header class="split">
+                    <h2>Big Dish</h2>
+                    <a class="link" href="#top">Back to Top</a>
+                </header>
+                <div class="grid">
+                    <div class="item">
+                        <b>Contact</b>
+                        <ul>
+                            <li>+44 078 69482</li>
+                            <li>Robert Gordon University,</li>
+                            <li>Garthdee Rd</li>
+                            <li>AB10 7GJ</li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <b>Social</b>
+                        <ul class="social-links">
+                            <li class="vertical-center">
+                                <a class="link facebook" href="#facebook">
+                                    <i class="icon facebook"></i>
+                                    Facebook
+                                </a>
+                            </li>
+                            <li class="vertical-center">
+                                <a class="link twitter" href="#twitter">
+                                    <i class="icon twitter"></i>
+                                    Twitter
+                                </a>
+                            </li>
+                            <li class="vertical-center" data-color="#fff">
+                                <a class="link instagram" href="#instagram">
+                                    <i class="icon instagram"></i>
+                                    Instagram
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <b>Assets</b>
+                        <ul>
+                            <li>
+                                <a class="link" href="../licences/">Licence Notice</a>
+                            </li>
+                            <li>
+                                <a class="link" href="../licences/#images">Images</a>
+                            </li>
+                            <li>
+                                <a class="link" href="../licences/#icons">Icons</a>
+                            </li>
+                            <li>
+                                <a class="link" href="../licences/#fonts">Fonts</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </footer>
+        <script src="../public/scripts/form.js"></script>
+    </body>
+</html>
