@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'Pacifico';
+    src: url('../assets/fonts/pacifico.ttf') format('truetype');
+    display: swap;
+}
+
 /* Generic */
 *, *:before, *:after {
     box-sizing: border-box;
@@ -17,6 +23,8 @@ body {
     font: 14px/1 Arial, sans-serif;
     margin: 0;
     min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -25,7 +33,7 @@ a {
 }
 
 .link {
-    color: #3c4eff;
+    color: #1866da;
 }
 
 .link:hover,
@@ -115,8 +123,9 @@ ul.bullet {
     text-align: center;
 }
 
-/* Header Styles */
-header.intro {
+/* Intro (a.k.a. Big) Header Styles */
+header.intro,
+aside.intro {
     box-shadow: 2px 0 12px #333;
     padding: 128px 0;
     position: relative;
@@ -138,7 +147,7 @@ header.intro {
 
 .cover:after {
     backdrop-filter: sepia(25%);
-    background-image: radial-gradient(transparent, rgba(0,0,0,.5));
+    background-image: radial-gradient(transparent, rgba(0,0,0,.65));
     bottom: 0;
     content: '';
     left: 0;
@@ -147,9 +156,11 @@ header.intro {
     top: 0;
 }
 
-.cover.landing  {
-    background-image: url('../assets/landing.jpg');
-}
+/* Cover Images */
+.cover.landing { background-image: url('../assets/cover-landing.jpg'); }
+.cover.contact { background-image: url('../assets/cover-contact.jpg'); }
+.cover.siwb { background-image: url('../assets/cover-siwb.jpg'); }
+.cover.join { background-image: url('../assets/cover-join.jpg'); }
 
 .intro .author {
     bottom: 6px;
@@ -165,6 +176,36 @@ header.intro {
 
 .intro .author:hover {
     opacity: 1;
+}
+
+header.intro section {
+    text-align: center;
+}
+
+header.intro h1 {
+    color: #fff;
+    font-size: 3em;
+    margin-top: 1em;
+    font-family: 'Pacifico';
+    /* line-height: 90px; */
+    letter-spacing: 2px;
+    text-shadow: 0 1px 6px rgba(0,0,0,.6);
+}
+
+aside.intro {
+    color: #fff;
+}
+
+aside.intro .panel {
+    background-color: rgba(0,0,0,.45);
+    box-shadow: inset 0 0 0 3px rgba(0,0,0,.25);
+    display: block;
+    line-height: 1.4;
+    padding: 1em 4em;
+}
+
+.panel h2 {
+    margin-top: 1em;
 }
 
 /* Navbar Styles */
@@ -263,7 +304,12 @@ menu a {
     justify-content: unset;
 }
 
-/* Special Case for Landing Page */
+.dropdown .active:before {
+    content: '→';
+    padding-right: 3px;
+}
+
+/* Special Case for Intro Headers */
 nav.intro {
     background-color: transparent;
     justify-content: flex-end;
@@ -359,15 +405,111 @@ Filter trick to change colour of background images. Source: https://codepen.io/s
 .social-links .icon { pointer-events: none; }
 
 /* Form Styles */
+form:not(.bar) {
+    display: flex;
+    flex-direction: column;
+}
+
+form ::placeholder {
+    color: #333;
+    user-select: none;
+}
+
+form :focus {
+    outline: 0;
+}
+
+form:not(.bar) input,
+form:not(.bar) select,
+form textarea {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 2px;
+    display: block;
+    height: 36px;
+    outline: 0;
+    padding: 0 .75rem;
+    width: 100%;
+}
+
+form textarea {
+    font: inherit;
+    height: 128px;
+    padding: .75em;
+    resize: none;
+}
+
+form:not(.bar) select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+}
+
+form:not(.bar) select + label .arrow {
+    transition: opacity 125ms ease-in, transform .2s ease-in;
+}
+
+select:focus + label .arrow {
+    transform: rotateX(180deg);
+}
+
+form select,
+form button {
+    cursor: pointer;
+}
+
+form .button-holder {
+    display: flex;
+    justify-content: flex-end;
+}
+
+form button {
+    background-color: #f3a447;
+    border: 0;
+    color: #fff;
+    font-size: 12px;
+    padding: .7em 2.5em;
+}
+
+form:not(.bar) input:hover,
+form:not(.bar) select:hover,
+form textarea:hover {
+    border-color: #aaa;
+}
+
+form button:hover {
+    background-color: #ff8a00;
+}
+
+form:not(.bar) input:focus,
+form:not(.bar) select:focus,
+form textarea:focus {
+    border-color: #f3a447;
+}
+
+form button:active {
+    background-color: #dc7e10;
+}
+
+form button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -3px;
+}
+
+form:not(.bar) input:first-child {
+    margin-top: 0;
+}
+
+/* Grids in Forms */
+form .grid {
+    padding: 0;
+}
+
 form.bar {
     border-bottom: 1px solid #ccc;
     margin-top: 1.5em;
     padding-bottom: 6px;
-}
-
-select {
-    cursor: pointer;
-    margin-left: 6px;
 }
 
 /* Checkboxe Styles */
@@ -416,6 +558,66 @@ select {
 
 #show { margin-left: 6px; }
 
+/* Form Output Box */
+.form-output {
+    border: 1px solid #aaa;
+    border-radius: 2px;
+    cursor: pointer;
+    margin: .5em 0;
+    padding: 1em;
+    position: relative;
+}
+
+.form-output:empty {
+    visibility: hidden;
+}
+
+.form-output:before {
+    content: '×';
+    font: bold 24px arial;
+    height: 24px;
+    opacity: .6;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 8px;
+    transition: opacity 125ms ease-in;
+    width: 24px;
+}
+
+.form-output:hover:before {
+    opacity: 1;
+}
+
+/* Input Icons */
+.form-group {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin: .25em 0 .5em;
+    position: relative;
+}
+
+h3 + .form-group {
+    margin-top: .75em;
+}
+
+.form-group .icon {
+    content: '';
+    cursor: pointer;
+    height: 24px;
+    opacity: .6;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    transition: opacity 125ms ease-in;
+    width: 24px;
+}
+
+.form-group .icon:hover {
+    opacity: 1;
+}
+
 /* Grid Structure */
 .grid {
     display: grid;
@@ -423,6 +625,10 @@ select {
     grid-auto-rows: min-content;
     grid-gap: 36px 18px;
     padding: 1.5em 0;
+}
+
+.grid.split {
+    grid-template-columns: 1fr 1fr;
 }
 
 .grid .item {
@@ -547,12 +753,19 @@ select {
     width: 24px;
 }
 
-.icon.vegan {background-image: url('../assets/leaf.svg');}
-.icon.time {background-image: url('../assets/clock.svg');}
-.icon.help {background-image: url('../assets/help.svg')}
-.icon.facebook {background-image: url('../assets/facebook.svg');}
-.icon.twitter {background-image: url('../assets/twitter.svg');}
-.icon.instagram {background-image: url('../assets/instagram.svg');}
+.icon.vegan {background-image: url('../assets/icons/leaf.svg');}
+.icon.time {background-image: url('../assets/icons/clock.svg');}
+.icon.help {background-image: url('../assets/icons/help.svg')}
+.icon.mail {background-image: url('../assets/icons/mail.svg')}
+.icon.arrow {background-image: url('../assets/icons/arrow.svg')}
+.icon.phone {background-image: url('../assets/icons/phone.svg')}
+.icon.badge {background-image: url('../assets/icons/badge.svg')}
+.icon.pencil {background-image: url('../assets/icons/pencil.svg')}
+.icon.close {background-image: url('../assets/icons/close.svg')}
+.icon.person {background-image: url('../assets/icons/person.svg')}
+.icon.facebook {background-image: url('../assets/icons/facebook.svg');}
+.icon.twitter {background-image: url('../assets/icons/twitter.svg');}
+.icon.instagram {background-image: url('../assets/icons/instagram.svg');}
 
 /* Responsive Styling */
 @media only screen and (max-width: 1072px){
@@ -576,7 +789,11 @@ select {
     }
     
     .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .grid.split {
+        grid-template-columns: 1fr;
     }
 }
 
