@@ -1,8 +1,8 @@
-const scrollAmount = 3.24;
+const scrollAmount = 4;
 
 // Utility function to produce a background position value.
 function calcPosition(elem){
-    return ((window.innerHeight / 2) + window.scrollY - (elem.getBoundingClientRect().height)) / -scrollAmount;
+    return -window.scrollY / scrollAmount;
 }
 
 window.addEventListener('DOMContentLoaded', function(){
@@ -10,18 +10,18 @@ window.addEventListener('DOMContentLoaded', function(){
     if(window.innerWidth <= 636 || window.screen.width <= 636){
         return;
     }
-    
+
     const parallax = document.getElementsByClassName('parallax');
     const limits = [];
     const covers = document.querySelectorAll('.parallax .cover');
-    
+
     for(let i = 0; i < parallax.length; ++i){
         let height = parallax[i].offsetHeight,
             top = parallax[i].offsetTop,
             bottom = top + height;
-            
+
         limits[i] = { bottom, top }
-        
+
         if(window.scrollY > bottom){
             covers[i].style.backgroundPosition = `center ${-height / scrollAmount}px`;
         } else if(window.scrollY < top){
@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', function(){
             covers[i].style.backgroundPosition = `center ${calcPosition(parallax[i])}px`;
         }
     }
-    
+
     // Catch when the user scrolls
     this.addEventListener('scroll', function(e){
         console.log(window.scrollY, limits);
