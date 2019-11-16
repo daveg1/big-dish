@@ -118,6 +118,16 @@ ul.bullet {
     display: flex;
 }
 
+.horizontal-center {
+  display: flex;
+  justify-content: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Textual Classes */
 .text-center {
     text-align: center;
@@ -309,10 +319,10 @@ menu a {
     padding-right: 3px;
 }
 
-/* Special Case for Intro Headers */
+/* Special Case for Intro Header Navbars*/
 nav.intro {
     background-color: transparent;
-    justify-content: flex-end;
+    justify-content: flex-end!important;
     left: 0;
     position: absolute;
     right: 0;
@@ -380,10 +390,6 @@ footer .link {
 
 footer .icon {
     margin-right: 6px;
-}
-
-footer .grid .item {
-    display: block;
 }
 
 .social-links a {
@@ -636,6 +642,11 @@ h3 + .form-group {
     justify-content: center;
 }
 
+.item.block {
+    display: block;
+    height: 100%;
+}
+
 .item.hidden {
     display: none;
     position: absolute;
@@ -671,74 +682,101 @@ h3 + .form-group {
 .recipe .icon { transition: transform .15s ease-in; }
 .recipe .icon:hover { transform: scale(1.2); }
 
-/* Events Section */
-.events {
-    margin: 48px 0;
+/* Events Page Styles */
+.event-image {
+    background: no-repeat center / cover;
+    height: 196px;
+    width: 196px;
 }
 
-/* Events Slider Styles */
-.slider-bar {
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-shadow: inset 0 0 0 1px #fff;
-    margin: 36px 0;
-}
-
-.slider-item {
-    cursor: pointer;
-    filter: grayscale(90%);
-    flex-basis: calc(100%/6);
-    padding: 16px;
+/* Slider Buttons */
+.slider-header {
     position: relative;
-    transition: filter .15s ease-in;
 }
 
-.slider-item:before {
-    background-color: #000;
-    border-radius: 3px;
-    color: #fff;
-    content: attr(data-event);
-    font-size: 12px;
-    left: 50%;
-    min-width: 96px;
-    opacity: 0;
-    padding: 3px 6px;
+.slider-arrows {
+    bottom: 0;
+    left: 0;
     position: absolute;
-    pointer-events: none;
-    top: -8px;
-    text-align: center;
-    transform: translateX(-50%);
-    transition: opacity .25s ease-in;
+    right: 0;
+    top: 0;
 }
 
-.slider-item:hover:before,
-.slider-item.selected:before {
+.slider-arrows .arrow {
+    cursor: pointer;
+    opacity: .6;
+    transition: opacity .15s ease-in;
+}
+
+.slider-arrows .arrow:hover {
     opacity: 1;
 }
 
-.slider-item:hover,
-.slider-item.selected {
-    filter: unset;
+.slider-arrows [rel="left"] { transform: rotate(90deg); }
+.slider-arrows [rel="right"] { transform: rotate(-90deg); }
+
+/* Calendar */
+table.calendar {
+    border-spacing: .5em;
+    margin: 1.5em 0 0;
+    width: 100%;
 }
 
-.slider-item img {
-    display: block;
-    height: 64px;
-    margin: 0 auto;
-    pointer-events: none;
+.calendar th,
+.calendar td {
+    padding: .75em 0;
+    text-align: center;
     user-select: none;
-    width: 64px;
 }
 
-/* Current Event Being Shown */
-.current-event {
-    padding-right: 24px;
+.calendar th {
+    color: #f3a447;
+    position: relative;
 }
 
-.current-event h2 {
-    margin: 0 0 0 8px;
+.calendar td {
+    cursor: pointer;
 }
+
+.calendar td:not(.active):hover {
+    box-shadow: inset 0 0 0 1px #f3a447;
+    font-weight: 700;
+}
+
+.calendar td:not(.active):active {
+  box-shadow:
+    inset 0 0 0 1px #f3a447,
+    inset 0 0 6px #ccc
+  ;
+}
+
+td[rel="blank"]:active { box-shadow: inset 0 0 0 1px #f3a447!important; }
+
+.calendar .active {
+    background-color: #ff8a00;
+    color: #fff;
+    font-weight: 700;
+}
+
+.calendar [rel="event"] {
+    position: relative;
+}
+
+.calendar [rel="event"]:after {
+    background: #1866da;
+    border-radius: 50%;
+    bottom: 2px;
+    color: #fff;
+    content: '';
+    display: block;
+    right: 5px;
+    top: 5px;
+    height: 7px;
+    position: absolute;
+    width: 7px;
+}
+
+.calendar [rel="event"].active:after { background-color: #000; }
 
 /* Legal Page */
 .legal {
@@ -772,11 +810,11 @@ h3 + .form-group {
     header .cover {
         background-size: 120%;
     }
-    
+
     .grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .grid .recipe img {
         height: 274px;
         width: 274px;
@@ -787,11 +825,11 @@ h3 + .form-group {
     header .cover {
         background-size: 140%;
     }
-    
+
     .grid {
         grid-template-columns: 1fr 1fr;
     }
-    
+
     .grid.split {
         grid-template-columns: 1fr;
     }
@@ -801,11 +839,11 @@ h3 + .form-group {
     header .cover {
         background-size: 150%;
     }
-    
+
     .grid {
         grid-template-columns: 1fr;
     }
-    
+
     .grid .recipe img {
         height: auto;
         width: 100%;
