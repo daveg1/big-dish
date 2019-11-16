@@ -96,7 +96,7 @@ function changeSlide(){
 function blankMonth(){
     const tbody = document.createElement('tbody');
 
-    tbody.innerHTML = '<tr><td colspan="7">Sorry, there are no events planned for this month. Try next month.</td></tr>';
+    tbody.innerHTML = '<tr><th colspan="7">Sorry, there are no events planned for this month. Try next month.</th></tr>';
 
     calendar.appendChild(tbody);
 }
