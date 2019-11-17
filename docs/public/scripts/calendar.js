@@ -1,7 +1,10 @@
 var currMonth = (new Date).getMonth()+1;
-var calendar;
 var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
+// The main calendar table on the actual webpage.
+var calendar;
+
+// Object holding event dates.
 const months = {
     9: {
         // Amount of blank days to add to the beginning.
@@ -64,6 +67,7 @@ const months = {
     }
 }
 
+// Run only when the page (DOM) is fully loaded and parsed.
 window.addEventListener('DOMContentLoaded', function(){
     // Grab Main Calendar Element
     calendar = document.getElementById('calendar');
@@ -74,25 +78,36 @@ window.addEventListener('DOMContentLoaded', function(){
         btn.addEventListener('click', changeSlide, false);
     }
 
-    // Generate Initial Slide
+    // Initialising the table, by choosing
+    // the current month and day
+    // and generating a slide based off that.
     generateSlide(months[currMonth])
     document.getElementById('month').innerHTML = monthNames[currMonth-1];
     setToToday();
 }, false);
 
+// Handles each of the slide
+// arrows' click event.
 function changeSlide(){
     currMonth += +this.dataset.pivot;
 
+    // Allows the calendar to
+    // loop round if the limit
+    // is exceeded.
     if(currMonth > 12){
         currMonth = 1;
     } else if(currMonth < 1){
         currMonth = 12;
     }
-
+    
+    // Generate a slide based on that month.
     document.getElementById('month').innerHTML = monthNames[currMonth-1];
     generateSlide(months[currMonth]);
 }
 
+// If there are no events for that month,
+// it is pointless to generate a blank table.
+// So, instead, output a message.
 function blankMonth(){
     const tbody = document.createElement('tbody');
 
@@ -101,52 +116,80 @@ function blankMonth(){
     calendar.appendChild(tbody);
 }
 
+// Generates the cells for the table.
 function generateSlide(month){
     // Check if <tbody> already exists.
     if(calendar.children[1]){
         calendar.removeChild(calendar.children[1]);
     }
 
+    // If no events, avoid generating a blank.
     if(!month){
         return blankMonth();
     }
 
+    // Object destructuring
     let {initialGap, finalGap, length} = month;
+    
+    // Counts the actual cells on the table.
+    // I.e., the cells with numbers.
     let dayCount = 1;
+    
+    // The main body of the slide.
     let slide = document.createElement('tbody');
 
+    // For each row (maximum possible rows is 6).
     for(let i = 0; i < 6; ++i){
+        // The current row to store the <td>s in.
         let row = document.createElement('tr');
 
+        // For each day of the week.
         for(let j = 0; j < 7; ++j){
+            // Current cell
             let day = document.createElement('td');
-
+            
+            // The initial gap is the number of blank cells
+            // to place before the first of the month,
+            // so that it lines up correctly with the
+            // day of the week it lands on.
             if(initialGap){
                 day.setAttribute('rel', 'blank');
                 initialGap--;
+                
+            // The actual dates (cells with numbers).
             } else if(dayCount <= length){
                 day.innerHTML = dayCount;
                 day.onclick = makeActive;
-
+                
+                // If this day has an event, set it so.
                 if(month.events[dayCount]){
                     day.setAttribute('rel', 'event');
                 }
 
                 dayCount++;
+                
+            // The final cells to fill up the rows.
             } else {
                 day.setAttribute('rel', 'blank');
             }
 
+            // Add each cell to the current row.
             row.appendChild(day);
         }
 
+        // Add the current row to the main body.
         slide.appendChild(row);
     }
 
+    // Finally, add the slide to the table.
     calendar.appendChild(slide);
 }
 
+// Updates the event information to the left of the calendar,
+// if there is an event present.
 function changeEvent(day){
+    // If day object is non-existent, it means there
+    // is no event on that day. Skip it.
     if(!day){
         return;
     }
@@ -157,6 +200,9 @@ function changeEvent(day){
     document.getElementById('event-description').innerHTML = day.description;
 }
 
+// Finds the current date clicked on,
+// removes its active state, and sets
+// the newly selected cell to an active state.
 function makeActive(){
     if(this.className){
         return;
@@ -169,6 +215,7 @@ function makeActive(){
     changeEvent(months[currMonth].events[+this.innerText]);
 }
 
+// Initialising the table to make the current day active.
 function setToToday(){
     const day = (new Date()).getDate();
     const cells = document.querySelectorAll('td:not([rel="blank"])');

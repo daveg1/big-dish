@@ -21,8 +21,7 @@ function moveTooltip(e){
     let dims = this.getBoundingClientRect();
     let offset = +this.dataset.offset || 0;
     
-    // let left = (tooltipBox.left - tooltipBox.width) + (dims.left + dims.width) + (tooltip.offsetWidth / 2) - 12;
-    let left = dims.left - (tooltipBox.width / 2) + (tooltip.offsetWidth / 2) + offset;
+    let left = (tooltip.offsetWidth / 2) + (dims.left - (dims.width / 2)) - 12 + offset;
     tooltip.style.left = `${left}px`
     
     // Name header.
