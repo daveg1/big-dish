@@ -669,7 +669,18 @@ h3 + .form-group {
     transform: translateY(-4px);
 }
 
-.recipe img { border-radius: 3px; }
+.recipe img {
+    border-radius: 3px;
+    height: 216px;
+    object-fit: cover;
+    object-position: center;
+    width: 216px;
+}
+
+.recipe h4,
+.recipe p {
+    max-width: 216px;
+}
 
 .recipe p {
     font-size: 12px;
@@ -685,6 +696,29 @@ h3 + .form-group {
 
 .recipe .icon { transition: transform .15s ease-in; }
 .recipe .icon:hover { transform: scale(1.2); }
+
+/* Individual Recipes */
+.recipe-title {
+    vertical-align: baseline;
+    margin-bottom: 1em;
+}
+
+.recipe-ingredients {
+    padding-left: 1em;
+}
+
+.recipe-ingredients h2 {
+    margin-top: 0;
+}
+
+.recipe-steps h2 {
+    text-align: center;
+}
+
+.recipe-steps ol li {
+    margin: 1em 0 .5em;
+    line-height: 1.6;
+}
 
 /* Events Page Styles */
 .event-image {
@@ -787,7 +821,7 @@ td[rel="blank"]:active { box-shadow: inset 0 0 0 1px #f3a447!important; }
     height: 437px;
     overflow: hidden;
     position: relative;
-    width: 1024px;
+    width: 100%;
 }
 
 /* Member Cutouts */
@@ -854,7 +888,7 @@ small.help:after {
 /* Members Tooltip Area */
 .members-info {
     height: 96px;
-    position: relative;
+    /* position: relative; */
 }
 
 .members-info .tooltip {
@@ -900,6 +934,11 @@ small.help:after {
 .tooltip p {
     margin: .5em 0 0;
     font-size: 12px;
+}
+
+/* Mobile Version */
+.members-mobile {
+    display: none;
 }
 
 /* Legal Page */
@@ -956,6 +995,22 @@ small.help:after {
 
     .grid.split {
         grid-template-columns: 1fr;
+    }
+    
+    .grid .item.column {
+        align-items: center;
+    }
+    
+    .members-desktop { display: none; }
+    .members-mobile { display: block; }
+    
+    .members-mobile .item img {
+        width: 10em;
+        height: 10em;
+    }
+    
+    .members-mobile .item p {
+        margin: 0;
     }
 }
 

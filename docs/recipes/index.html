@@ -57,86 +57,90 @@
                 <div class="vertical-center">
                     <label>Show Only</label>
                     <div class="vertical-center" id="show">
+                        <label class="label-button" for="meat">
+                            <input type="checkbox" name="" id="meat">
+                            <span>Meat</span>
+                        </label>
                         <label class="label-button" for="vegan">
                             <input type="checkbox" name="" id="vegan">
                             <span>Vegan</span>
                         </label>
-                        <label class="label-button" for="nonVegan">
-                            <input type="checkbox" name="" id="nonVegan">
-                            <span>Non Vegan</span>
-                        </label>
                     </div>
                 </div>
                 <div class="vertical-center">
-                    <label>Sort by</label>
+                    <label>Sort by—</label>
                     <select id="sort">
-                        <option value="" selected>Cooking Time</option>
+                        <option selected disabled>Select</option>
+                        <option value="aToZ">A–Z</option>
+                        <option value="zToA">Z–A</option>
+                        <option value="longest">Longest Time</option>
+                        <option value="shortest">Shortest Time</option>
                     </select>
                 </div>
             </form>
-            <div class="grid">
+            <div id="recipe-grid" class="grid">
                 <div class="item">
-                    <a href="" class="recipe" data-meal="vegan">
-                        <img src="https://placehold.it/216x216" alt="Recipe 1">
-                        <h4>Recipe Name</h4>
-                        <p>This is a short recipe description.</p>
+                    <a href="./chicken-curry.html" class="recipe" data-meal="meat" data-time="60">
+                        <img src="../public/assets/recipes/chicken-curry.png" alt="Chicken Curry">
+                        <h4>Chicken Curry</h4>
+                        <p>An Indian classic.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
-                                <span>2 hours</span>
-                            </p>
-                            <p><i class="icon vegan"></i>Vegan Friendly</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="" class="recipe" data-meal="nonVegan">
-                        <img src="https://placehold.it/216x216" alt="Recipe 2">
-                        <h4>Recipe Name</h4>
-                        <p>This is a short recipe description.</p>
-                        <div class="info">
-                            <p class="split">
-                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
-                                <span>30 mins</span>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="" class="recipe" data-meal="nonVegan">
-                        <img src="https://placehold.it/216x216" alt="Recipe 3">
-                        <h4>Recipe Name</h4>
-                        <p>This is a short recipe description.</p>
-                        <div class="info">
-                            <p class="split">
-                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
-                                <span>1 hour 30 mins</span>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="" class="recipe" data-meal="vegan">
-                        <img src="https://placehold.it/216x216" alt="Recipe 4">
-                        <h4>Recipe Name</h4>
-                        <p>This is a short recipe description.</p>
-                        <div class="info">
-                            <p class="split">
-                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
+                                <span class="vertical-center"><i class="icon time"></i>Time to Make</span>
                                 <span>1 hour</span>
                             </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="./casserole.html" class="recipe" data-meal="vegan" data-time="50">
+                        <img src="../public/assets/recipes/casserole.png" alt="Casserole">
+                        <h4>Casserole</h4>
+                        <p>Learn to cook a tasty casserole.</p>
+                        <div class="info">
+                            <p class="split">
+                                <span class="vertical-center"><i class="icon time"></i>Time to Make</span>
+                                <span>50 mins</span>
+                            </p>
                             <p><i class="icon vegan"></i>Vegan Friendly</p>
                         </div>
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="recipe" data-meal="vegan">
-                        <img src="https://placehold.it/216x216" alt="Recipe 5">
-                        <h4>Recipe Name</h4>
+                    <a href="./raspberry-nut-bar.html" class="recipe" data-meal="vegan" data-time="35">
+                        <img src="../public/assets/recipes/nut-bar.png" alt="Raspberry Nut Bar">
+                        <h4>Raspberry Nut Bar</h4>
+                        <p>Crumbly and delicious.</p>
+                        <div class="info">
+                            <p class="split">
+                                <span class="vertical-center"><i class="icon time"></i>Time to Make</span>
+                                <span>35 mins</span>
+                            </p>
+                            <p><i class="icon vegan"></i>Vegan Friendly</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#beef-stew" class="recipe" data-meal="meat" data-time="120">
+                        <img src="../public/assets/recipes/beef-stew.png" alt="Beef Stew">
+                        <h4>Beef Stew</h4>
                         <p>This is a short recipe description.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
+                                <span class="vertical-center"><i class="icon time"></i>Time to Make</span>
+                                <span>2 hours</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#vegan-shepherds-pie" class="recipe" data-meal="vegan" data-time="45">
+                        <img src="../public/assets/recipes/vegan-shepherds.png" alt="Shepherd's Pie">
+                        <h4>Vegan Shepherd’s Pie</h4>
+                        <p>This is a short recipe description.</p>
+                        <div class="info">
+                            <p class="split">
+                                <span class="vertical-center"><i class="icon time"></i>Time to Make</span>
                                 <span>45 mins</span>
                             </p>
                             <p><i class="icon vegan"></i>Vegan Friendly</p>
@@ -144,68 +148,68 @@
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="recipe" data-meal="nonVegan">
-                        <img src="https://placehold.it/216x216" alt="Recipe 6">
-                        <h4>Recipe Name</h4>
+                    <a href="#sticky-toffee-pudding" class="recipe" data-meal="vegan" data-time="40">
+                        <img src="../public/assets/recipes/sticky-toffee.png" alt="Sticky Toffee Pudding">
+                        <h4>Sticky Toffee Pudding</h4>
                         <p>This is a short recipe description.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
-                                <span>15 mins</span>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="" class="recipe" data-meal="vegan">
-                        <img src="https://placehold.it/216x216" alt="Recipe 7">
-                        <h4>Recipe Name</h4>
-                        <p>This is a short recipe description.</p>
-                        <div class="info">
-                            <p class="split">
-                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
-                                <span>2 hours 15 mins</span>
+                                <span class="vertical-center"><i class="icon time"></i>Time to Make</span>
+                                <span>40 mins</span>
                             </p>
                             <p><i class="icon vegan"></i>Vegan Friendly</p>
                         </div>
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="recipe" data-meal="nonVegan">
-                        <img src="https://placehold.it/216x216" alt="Recipe 8">
-                        <h4>Recipe Name</h4>
+                    <a href="#meatballs-in-tomato-sauce" class="recipe" data-meal="meat" data-time="105">
+                        <img src="../public/assets/recipes/meatballs.png" alt="Meatballs in Tomato Sauce">
+                        <h4>Meatballs in Tomato Sauce</h4>
                         <p>This is a short recipe description.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
-                                <span>15 mins</span>
+                                <span class="vertical-center"><i class="icon time"></i>Time to Make</span>
+                                <span>1 hour 45 mins</span>
                             </p>
                         </div>
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="recipe" data-meal="vegan">
-                        <img src="https://placehold.it/216x216" alt="Recipe 9">
-                        <h4>Recipe Name</h4>
+                    <a href="#bean-chilli" class="recipe" data-meal="meat" data-time="120">
+                        <img src="../public/assets/recipes/bean-chilli.png" alt="Bean Chilli">
+                        <h4>Bean Chilli</h4>
                         <p>This is a short recipe description.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
-                                <span>25 mins</span>
+                                <span class="vertical-center"><i class="icon time"></i>Time to Make</span>
+                                <span>2 hours</span>
+                            </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="#blackberry-and-apple-crumble-smoothie" class="recipe" data-meal="vegan" data-time="5">
+                        <img src="../public/assets/recipes/smoothie.png" alt="Blackberry and Apple Crumble Smoothie">
+                        <h4>Blackberry and Apple Crumble Smoothie</h4>
+                        <p>This is a short recipe description.</p>
+                        <div class="info">
+                            <p class="split">
+                                <span class="vertical-center"><i class="icon time"></i>Time to Make</span>
+                                <span>5 mins</span>
                             </p>
                             <p><i class="icon vegan"></i>Vegan Friendly</p>
                         </div>
                     </a>
                 </div>
                 <div class="item">
-                    <a href="" class="recipe" data-meal="nonVegan">
-                        <img src="https://placehold.it/216x216" alt="Recipe 10">
-                        <h4>Recipe Name</h4>
+                    <a href="#lentil-and-bacon-soup" class="recipe" data-meal="meat" data-time="15">
+                        <img src="../public/assets/recipes/lentil-soup.png" alt="Lentil and Bacon Soup">
+                        <h4>Lentil and Bacon Soup</h4>
                         <p>This is a short recipe description.</p>
                         <div class="info">
                             <p class="split">
-                                <span class="vertical-center"><i class="icon time"></i>Cooking Time</span>
-                                <span>1 hour 25 mins</span>
+                                <span class="vertical-center"><i class="icon time"></i>Time to Make</span>
+                                <span>15 mins</span>
                             </p>
                         </div>
                     </a>
