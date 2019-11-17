@@ -465,16 +465,16 @@ select:focus + label .arrow {
 }
 
 form select,
-form button {
+.button {
     cursor: pointer;
 }
 
-form .button-holder {
+.button-holder {
     display: flex;
     justify-content: flex-end;
 }
 
-form button {
+.button {
     background-color: #f3a447;
     border: 0;
     color: #fff;
@@ -488,7 +488,7 @@ form textarea:hover {
     border-color: #aaa;
 }
 
-form button:hover {
+.button:hover {
     background-color: #ff8a00;
 }
 
@@ -498,11 +498,11 @@ form textarea:focus {
     border-color: #f3a447;
 }
 
-form button:active {
+.button:active {
     background-color: #dc7e10;
 }
 
-form button:focus {
+.button:focus {
     outline: 1px solid #fff;
     outline-offset: -3px;
 }
@@ -641,6 +641,10 @@ h3 + .form-group {
     grid-template-columns: 1fr 1fr;
 }
 
+.grid.triple {
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .grid .item {
     display: flex;
     justify-content: center;
@@ -703,6 +707,10 @@ h3 + .form-group {
     margin-bottom: 1em;
 }
 
+.recipe-title a {
+    margin-bottom: -4em;
+}
+
 .recipe-ingredients {
     padding-left: 1em;
 }
@@ -715,9 +723,17 @@ h3 + .form-group {
     text-align: center;
 }
 
-.recipe-steps ol li {
-    margin: 1em 0 .5em;
-    line-height: 1.6;
+.recipe-steps ol {
+    margin: 0;
+}
+
+.recipe-steps li {
+    font-weight: 700;
+    padding-left: 1em;
+}
+
+.recipe-steps p {
+    font-weight: 400;
 }
 
 /* Events Page Styles */
@@ -946,6 +962,105 @@ small.help:after {
     font-size: 12px;
 }
 
+/* Merchandise */
+.merch .column {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.merch h2 {
+    margin-bottom: 1em;
+}
+
+.merch .garment {
+    background: no-repeat center / cover;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: block;
+    height: 196px;
+    padding: .5em;
+    width: 196px;
+}
+
+.merch .garment.large {
+    height: 512px;
+    width: 512px;
+}
+
+.merch .colours {
+    margin-top: 1em;
+    width: 196px;
+}
+
+.merch .colour {
+    border-radius: 50%;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+}
+
+.merch .colour.white,
+.merch .colour.yellow {
+    box-shadow: 0 0 0 1px #aaa;
+}
+
+.merch .colour.white  { background-color: #fff; }
+.merch .colour.black  { background-color: #000; }
+.merch .colour.grey   { background-color: #616265; }
+.merch .colour.red    { background-color: #e51f0b; }
+.merch .colour.yellow { background-color: #ffe400; }
+
+.merch .button:nth-child(2){
+    margin: 0 1em;
+}
+
+.merch .button-holder {
+    margin-top: 2em;
+}
+
+.merch .add {
+    background-color: #333;
+    padding: 1em 3em;
+}
+
+.merch .add:hover {
+    background-color: #555;
+}
+
+.merch .add:active {
+    background-color: #222;
+}
+
+/* Image Viewer */
+#viewer {
+    align-items: center;
+    background-color: rgba(0,0,0,.6);
+    bottom: 0;
+    cursor: zoom-out;
+    display: flex;
+    left: 0;
+    justify-content: center;
+    position: fixed;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+
+#viewer.shown {
+    visibility: visible;
+}
+
+#viewer img {
+    pointer-events: none;
+    max-height: 80%;
+    width: auto;
+}
+
+#enlarge {
+    cursor: zoom-in;
+}
+
 /* Icons */
 .icon {
     background: no-repeat center / 16px;
@@ -954,19 +1069,19 @@ small.help:after {
     width: 24px;
 }
 
-.icon.vegan {background-image: url('../assets/icons/leaf.svg');}
-.icon.time {background-image: url('../assets/icons/clock.svg');}
-.icon.help {background-image: url('../assets/icons/help.svg')}
-.icon.mail {background-image: url('../assets/icons/mail.svg')}
-.icon.arrow {background-image: url('../assets/icons/arrow.svg')}
-.icon.phone {background-image: url('../assets/icons/phone.svg')}
-.icon.badge {background-image: url('../assets/icons/badge.svg')}
-.icon.pencil {background-image: url('../assets/icons/pencil.svg')}
-.icon.close {background-image: url('../assets/icons/close.svg')}
-.icon.person {background-image: url('../assets/icons/person.svg')}
-.icon.facebook {background-image: url('../assets/icons/facebook.svg');}
-.icon.twitter {background-image: url('../assets/icons/twitter.svg');}
-.icon.instagram {background-image: url('../assets/icons/instagram.svg');}
+.icon.vegan     { background-image: url('../assets/icons/leaf.svg');      }
+.icon.time      { background-image: url('../assets/icons/clock.svg');     }
+.icon.help      { background-image: url('../assets/icons/help.svg');      }
+.icon.mail      { background-image: url('../assets/icons/mail.svg');      }
+.icon.arrow     { background-image: url('../assets/icons/arrow.svg');     }
+.icon.phone     { background-image: url('../assets/icons/phone.svg');     }
+.icon.badge     { background-image: url('../assets/icons/badge.svg');     }
+.icon.pencil    { background-image: url('../assets/icons/pencil.svg');    }
+.icon.close     { background-image: url('../assets/icons/close.svg');     }
+.icon.person    { background-image: url('../assets/icons/person.svg');    }
+.icon.facebook  { background-image: url('../assets/icons/facebook.svg');  }
+.icon.twitter   { background-image: url('../assets/icons/twitter.svg');   }
+.icon.instagram { background-image: url('../assets/icons/instagram.svg'); }
 
 /* Responsive Styling */
 @media only screen and (max-width: 1072px){
